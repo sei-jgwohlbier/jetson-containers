@@ -10,10 +10,15 @@ FROM ${BASE_IMAGE}
 
 ENV DEBIAN_FRONTEND=noninteractive
 
+RUN add-apt-repository ppa:deadsnakes/ppa
+
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-		  python3-dev \
+		  python3.12-dev \
+		  python3-distutils \
 		  python3-pip \
+    && update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.12 1 \
+    && curl -sS https://bootstrap.pypa.io/get-pip.py | python3.12 \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
     

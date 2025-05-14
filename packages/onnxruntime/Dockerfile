@@ -9,9 +9,11 @@
 ARG BASE_IMAGE
 FROM ${BASE_IMAGE}
 
-ARG ONNXRUNTIME_VERSION=v1.16.1
+ARG ONNXRUNTIME_VERSION=v1.16.2
 ARG ONNXRUNTIME_FLAGS="--allow_running_as_root"
 ARG CUDA_ARCHITECTURES=53;62;72;87
+
+RUN pip3 install --upgrade cmake==3.31.6
 
 #ADD https://api.github.com/repos/microsoft/onnxruntime/git/refs/heads/${ONNXRUNTIME_VERSION} /tmp/onnxruntime_version.json
 
