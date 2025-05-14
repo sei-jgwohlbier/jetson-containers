@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -ex
 
+add-apt-repository ppa:okirby/qt6-backports
+
 # skip build targets: libvulkan1 libvulkan-dev vulkan-tools
 apt-get update
 apt-get install -y --no-install-recommends \

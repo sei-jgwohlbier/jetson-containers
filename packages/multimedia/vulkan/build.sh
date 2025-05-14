@@ -2,6 +2,7 @@
 printf "\nDownloading Vulkan SDK $VULKAN_VERSION\n"
 set -ex
 
+
 cd $TMP
 wget $WGET_FLAGS https://sdk.lunarg.com/sdk/download/$VULKAN_VERSION/linux/vulkansdk-linux-x86_64-$VULKAN_VERSION.tar.xz
 tar xvf vulkansdk-*.tar.xz
